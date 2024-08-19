@@ -14,12 +14,21 @@
             <li>
                 <a href="/categories">Categories</a>
             </li>
+
+            <!--user: objeto global al cual las plantillas pueden acceder cuando el usuario está logueado-->
+            {% if user.is_authenticated %}
+            <li>
+                <a href="/logout">Logout</a>
+            </li>
+            {% else %}
             <li>
                 <a href="/signup">Signup</a>
             </li>
             <li>
-                <a href="/logout">Logout</a>
+                <a href="/signin">Signin</a>
             </li>
+            {% endif %}
+            
         </ul>
     </nav>
 
